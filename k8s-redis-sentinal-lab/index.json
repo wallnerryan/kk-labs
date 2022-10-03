@@ -1,18 +1,19 @@
 {
-  "title": "Kubernetes 2node multi-step verification",
-  "description": "Uses a two node Kubernetes cluster and performs user input verification in all steps",
+  "title": "Kubernetes with Redis",
+  "description": "k8s and Redis",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro/intro.md",
+      "background": "intro/background.sh"
     },
     "steps": [
       {
-        "title": "Create a pod",
+        "title": "Explore your Kubernetes Environment",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Delete a pod",
+        "title": "Deploy Redis",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
       }
