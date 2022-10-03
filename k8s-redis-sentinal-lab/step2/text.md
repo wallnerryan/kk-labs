@@ -1,7 +1,11 @@
 
 Deploy Redis
 
-`helm3 install redis -f /home/ubuntu/values.yaml bitnami/redis`
+`helm install redis -f values.yaml bitnami/redis`
+
+Wait until all Redis pods are running 2/2
+
+`kubectl get po`
 
 Deploy an app that talks to Redis
 
@@ -9,4 +13,4 @@ Deploy an app that talks to Redis
 
 Open the app to add data
 
-[click here]{{TRAFFIC_HOST1_30123}}
+[click here]({{TRAFFIC_HOST1_30123}})
