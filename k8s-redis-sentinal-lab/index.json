@@ -18,14 +18,14 @@
         "verify": "step2/verify.sh"
       }
     ],
-    "finish": {
-      "text": "finish.md"
-    },
     "assets": {
       "host01": [
         {"file": "app.yaml", "target": "~/", "chmod": "+w"},
         {"file": "values.yaml", "target": "~/", "chmod": "+w"}
       ]
+    },
+    "finish": {
+      "text": "finish.md"
     }
   },
   "backend": {
