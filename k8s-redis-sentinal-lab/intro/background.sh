@@ -1,5 +1,5 @@
 echo "...installing labs resources"
 
-https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
