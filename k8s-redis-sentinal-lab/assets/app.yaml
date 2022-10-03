@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-counter-deployment
+  labels:
+    app: k8s-counter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-counter
+  template:
+    metadata:
+      labels:
+        app: k8s-counter
+    spec:
+      containers:
+      - name: k8s-counter
+        image: wallnerryan/web-counter:redisauth1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: USE_REDIS_HOST
+          value: "redis-headless"
+        - name: USE_REDIS_PORT
+          value: "6379"
+        - name: USE_REDIS_PWD
+          value: "supersecretpw" 
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-counter-service
+spec:
+  type: NodePort
+  selector:
+    app: k8s-counter
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30123
+    name: k8s-counter-web
