@@ -20,9 +20,8 @@
     ],
     "finish": {
       "text": "finish.md"
-    }
-  },
-   "assets": {
+    },
+    "assets": {
       "host01": [
         {"file": "app.yaml", "target": "~/", "chmod": "+w"},
         {"file": "values.yaml", "target": "~/", "chmod": "+w"}
